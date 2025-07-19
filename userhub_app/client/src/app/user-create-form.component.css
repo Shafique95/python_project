@@ -1,0 +1,78 @@
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+input {
+  composes: neu-input;
+  color: var(--neu-text-dark);
+}
+input::placeholder {
+  color: var(--neu-text);
+  opacity: 1;
+}
+input.invalid {
+  box-shadow: var(--neu-inset), 0 0 0 2px var(--neu-error);
+  background: #fff0f3;
+  color: var(--neu-error);
+}
+label {
+  color: var(--neu-text);
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+.error {
+  color: var(--neu-error);
+  font-size: 0.97rem;
+  margin-left: 2px;
+}
+button {
+  composes: neu-btn;
+  width: 100%;
+  font-size: 1.08rem;
+  margin-top: 0.5rem;
+  color: var(--neu-text);
+}
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.toast {
+  margin-top: 0.7rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--neu-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: var(--neu-shadow);
+  animation: fadeIn 0.5s;
+  background: var(--neu-bg);
+  color: var(--neu-text-dark);
+}
+.toast.success {
+  color: var(--neu-success);
+}
+.toast.error {
+  color: var(--neu-error);
+}
+.loader {
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  border: 3px solid #fff;
+  border-top: 3px solid var(--neu-accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+} 

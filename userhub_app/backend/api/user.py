@@ -12,4 +12,8 @@ async def list_users(user_service: IUserService = Depends(get_user_service)):
 
 @router.post("/", response_model=UserRead, status_code=status.HTTP_201_CREATED)
 async def create_user(user: UserCreate, user_service: IUserService = Depends(get_user_service)):
-    return await user_service.create_user(user) 
+    return await user_service.create_user(user)
+
+@router.delete("/{user_id}", status_code=status.HTTP_204_NO_CONTENT)
+async def delete_user(user_id: int, user_service: IUserService = Depends(get_user_service)):
+    await user_service.delete_user(user_id) 

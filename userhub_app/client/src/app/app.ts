@@ -1,12 +1,2 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-})
-export class App {
-  protected readonly title = signal('frontend');
-}
+// এই ফাইলটি আর প্রয়োজন নেই, কারণ app.component.ts standalone এবং মূল এন্ট্রি পয়েন্ট।
+// চাইলে সম্পূর্ণ ফাইলটি ডিলিট করতে পারেন, অথবা শুধু কমেন্ট করে রাখুন।

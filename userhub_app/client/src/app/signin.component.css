@@ -1,0 +1,134 @@
+.signin-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  position: relative;
+}
+.signin-bg::before, .signin-bg::after {
+  content: '';
+  position: absolute;
+  width: 120px; height: 120px;
+  background: #b388ff33;
+  border-radius: 16px;
+  z-index: 0;
+}
+.signin-bg::before {
+  left: 4vw; top: 4vw;
+  transform: rotate(-10deg);
+  background: repeating-linear-gradient(135deg, #b388ff33 0 2px, transparent 2px 20px);
+}
+.signin-bg::after {
+  right: 4vw; bottom: 4vw;
+  transform: rotate(10deg);
+  background: repeating-linear-gradient(135deg, #b388ff33 0 2px, transparent 2px 20px);
+}
+.signin-card {
+  width: 370px;
+  padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+  border-radius: 24px;
+  box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #fff;
+  background: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 1;
+  position: relative;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.signin-input {
+  font-size: 1.18rem;
+  padding: 1.1rem 1.3rem;
+  border-radius: 18px;
+  box-shadow: inset 5px 5px 15px #bebebe, inset -5px -5px 15px #fff;
+  border: none;
+  background: #e0e0e0;
+  color: #888;
+  outline: none;
+  transition: box-shadow 0.2s, background 0.2s;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.signin-input:focus {
+  box-shadow: 0 0 0 2px #b388ff, inset 5px 5px 15px #bebebe, inset -5px -5px 15px #fff;
+  background: #f8f8ff;
+}
+.signin-input::placeholder {
+  color: #bfc3d4;
+  opacity: 1;
+  font-size: 1.13rem;
+  font-weight: 500;
+  text-align: center;
+}
+.center-input {
+  text-align: center;
+}
+.signin-btn {
+  width: 100%;
+  padding: 1.1rem 0;
+  border-radius: 24px;
+  background: linear-gradient(90deg, #b388ff 60%, #a259ff 100%);
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 4px 16px #b388ff44, 0 1.5px 4px #fff inset;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  text-align: center;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+}
+.signin-btn::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg,rgba(255,255,255,0.18) 0%,rgba(255,255,255,0.05) 100%);
+  opacity: 0.7;
+  pointer-events: none;
+  border-radius: 24px;
+}
+.center-btn {
+  text-align: center;
+}
+.signin-btn:active {
+  background: linear-gradient(90deg, #a259ff 80%, #b388ff 100%);
+  box-shadow: 0 2px 8px #a259ff44, 0 1.5px 4px #fff inset;
+}
+/* From Uiverse.io by adamgiebl */
+.neu-button {
+  background-color: #e0e0e0;
+  border-radius: 50px;
+  box-shadow: inset 4px 4px 10px #bcbcbc, inset -4px -4px 10px #ffffff;
+  color: #4d4d4d;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 40px;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid rgb(206, 206, 206);
+}
+
+.neu-button:hover {
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+
+.neu-button:focus {
+  outline: none;
+  box-shadow: inset 2px 2px 5px #bcbcbc, inset -2px -2px 5px #ffffff, 2px 2px 5px #bcbcbc, -2px -2px 5px #ffffff;
+}
+@media (max-width: 600px) {
+  .signin-card {
+    width: 98vw;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 18px;
+  }
+} 

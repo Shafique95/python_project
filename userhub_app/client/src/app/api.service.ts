@@ -28,4 +28,8 @@ export class ApiService {
   createUser(data: UserCreate): Observable<User> {
     return this.http.post<User>(this.baseUrl, data);
   }
+
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
 } 

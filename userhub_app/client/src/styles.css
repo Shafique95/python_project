@@ -1,1 +1,147 @@
-body { margin: 0; padding: 0; background: #f8f9fa; }
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+:root {
+  --neu-bg: #e6e9f0;
+  --neu-shadow: 8px 8px 16px #c8d0e7, -8px -8px 16px #fff;
+  --neu-inset: inset 2px 2px 6px #c8d0e7, inset -2px -2px 6px #fff;
+  --neu-radius: 22px;
+  --neu-accent: #a259ff;
+  --neu-border: #e6e9f0;
+  --neu-text: #bfc3d4;
+  --neu-text-dark: #b3b8c5;
+}
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  background: var(--neu-bg);
+  color: var(--neu-text-dark);
+}
+
+body.dark {
+  --bg: linear-gradient(135deg, #232526 0%, #414345 100%);
+  --card-bg: rgba(34,34,34,0.92);
+  --input-bg: #232526;
+  --input-focus: #414345;
+  color: #f8f9fa;
+}
+body.dark .app-header h1 {
+  -webkit-text-fill-color: #fff;
+}
+body.dark .app-card {
+  background: var(--card-bg);
+  color: #f8f9fa;
+}
+body.dark input, body.dark button {
+  background: var(--input-bg);
+  color: #f8f9fa;
+}
+body.dark .footer {
+  color: #bbb;
+}
+
+h1, h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+}
+
+.neu-card {
+  background: var(--neu-bg);
+  border-radius: var(--neu-radius);
+  box-shadow: var(--neu-shadow);
+  padding: 2rem;
+  margin: 2rem 0;
+  color: var(--neu-text-dark);
+}
+.neu-btn, .neu-icon {
+  background: var(--neu-bg);
+  border-radius: 50%;
+  box-shadow: var(--neu-shadow);
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  transition: box-shadow 0.2s;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--neu-text);
+}
+.neu-btn:active, .neu-icon:active {
+  box-shadow: var(--neu-inset);
+}
+.neu-input {
+  background: var(--neu-bg);
+  border-radius: var(--neu-radius);
+  box-shadow: var(--neu-inset);
+  border: none;
+  padding: 1rem 1.2rem;
+  font-size: 1.1rem;
+  color: var(--neu-text-dark);
+  margin-bottom: 1rem;
+  width: 100%;
+  outline: none;
+}
+.neu-input:focus {
+  background: #fff;
+  box-shadow: var(--neu-inset), 0 0 0 2px var(--neu-accent);
+  color: var(--neu-text-dark);
+}
+.neu-input::placeholder {
+  color: var(--neu-text);
+  opacity: 1;
+}
+.neu-toggle {
+  width: 56px; height: 28px;
+  background: var(--neu-bg);
+  border-radius: 14px;
+  box-shadow: var(--neu-shadow);
+  position: relative;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+.neu-toggle .dot {
+  position: absolute; top: 4px; left: 4px;
+  width: 20px; height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: var(--neu-shadow);
+  transition: left 0.2s, background 0.2s;
+}
+.neu-toggle.active .dot {
+  left: 32px;
+  background: var(--neu-accent);
+}
+.neu-slider {
+  width: 100%;
+  height: 12px;
+  background: var(--neu-bg);
+  border-radius: 6px;
+  box-shadow: var(--neu-shadow);
+  position: relative;
+  margin: 1.2rem 0;
+}
+.neu-slider .bar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--neu-accent);
+  border-radius: 6px;
+  height: 100%;
+}
+
+@media (max-width: 600px) {
+  .app-card {
+    padding: 1.2rem 0.7rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #e4e6eb;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--neu-accent);
+  border-radius: 8px;
+}

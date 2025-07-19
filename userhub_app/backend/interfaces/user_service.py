@@ -10,3 +10,7 @@ class IUserService(ABC):
     @abstractmethod
     async def create_user(self, user: UserCreate) -> UserRead:
         pass 
+
+    @abstractmethod
+    async def delete_user(self, user_id: int) -> None:
+        pass 

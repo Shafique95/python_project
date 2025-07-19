@@ -12,4 +12,7 @@ class UserService(IUserService):
         return await self.user_repository.list_users()
 
     async def create_user(self, user: UserCreate) -> UserRead:
-        return await self.user_repository.create_user(user) 
+        return await self.user_repository.create_user(user)
+
+    async def delete_user(self, user_id: int) -> None:
+        return await self.user_repository.delete_user(user_id) 

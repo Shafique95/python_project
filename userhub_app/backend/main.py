@@ -1,10 +1,21 @@
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from api import user
 from db.base import Base
 from db.session import engine
 
 app = FastAPI(title="UserHub Backend")
+
+# CORS Middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # ডেভেলপমেন্টে * রাখুন, প্রোডাকশনে নির্দিষ্ট origin দিন
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(user.router)
 
 # ডাটাবেজ টেবিল তৈরি

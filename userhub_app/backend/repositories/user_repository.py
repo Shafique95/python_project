@@ -20,4 +20,10 @@ class UserRepository(IUserRepository):
         self.session.add(db_user)
         await self.session.commit()
         await self.session.refresh(db_user)
-        return UserRead.model_validate(db_user) 
+        return UserRead.model_validate(db_user)
+
+    async def delete_user(self, user_id: int) -> None:
+        user = await self.session.get(User, user_id)
+        if user:
+            await self.session.delete(user)
+            await self.session.commit() 
