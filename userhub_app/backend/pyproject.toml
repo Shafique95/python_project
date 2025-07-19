@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "userhub-backend"
+version = "0.1.0"
+description = "Production-ready FastAPI project with Spring Boot-like architecture."
+authors = ["Your Name <your@email.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+sqlalchemy = "^2.0.0"
+pydantic = {extras = ["email"], version = "^2.6.0"}
+aiomysql = "^0.2.0"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.0.0"
+isort = "^5.13.0"
+mypy = "^1.8.0"
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api" 
