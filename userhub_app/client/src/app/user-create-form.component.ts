@@ -19,7 +19,13 @@ import { ApiService, UserCreate } from './api.service';
         <input required id="email" name="email" [(ngModel)]="email" type="email" placeholder="Email Address" [ngClass]="{'invalid': emailTouched && !isValidEmail(email)}" (blur)="emailTouched=true" class="neu-input" />
         <div class="error" *ngIf="emailTouched && !isValidEmail(email)">Valid email required</div>
       </div>
-      <button type="submit" [disabled]="!name || !isValidEmail(email) || loading" class="neu-btn">
+      <button
+        type="submit"
+        [disabled]="!name || !isValidEmail(email) || loading"
+        class="neu-btn"
+        [class.run-away]="buttonRun"
+        (mouseenter)="onButtonHover()"
+      >
         <span *ngIf="!loading">Create</span>
         <span *ngIf="loading" class="loader"></span>
       </button>
@@ -37,11 +43,19 @@ export class UserCreateFormComponent {
   loading = false;
   nameTouched = false;
   emailTouched = false;
+  buttonRun = false;
 
   constructor(private api: ApiService) {}
 
   isValidEmail(email: string): boolean {
     return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+  }
+
+  onButtonHover() {
+    if (!this.name || !this.isValidEmail(this.email)) {
+      this.buttonRun = true;
+      setTimeout(() => this.buttonRun = false, 600);
+    }
   }
 
   onSubmit() {

@@ -47,6 +47,11 @@ button[disabled] {
   opacity: 0.6;
   cursor: not-allowed;
 }
+button[disabled]:hover {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
 .toast {
   margin-top: 0.7rem;
   padding: 0.7rem 1.2rem;
@@ -80,4 +85,10 @@ button[disabled] {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+.neu-btn.run-away {
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(.7,-0.2,.7,1.5), opacity 0.3s;
+  pointer-events: none;
 } 
