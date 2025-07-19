@@ -1,7 +1,7 @@
 from typing import List
 from interfaces.user_service import IUserService
 from interfaces.user_repository import IUserRepository
-from schemas.user import UserCreate, UserRead
+from schemas.user import UserCreate, UserRead, UserUpdate
 
 class UserService(IUserService):
     """Spring @Service-এর মতো কাজ করে"""
@@ -15,4 +15,7 @@ class UserService(IUserService):
         return await self.user_repository.create_user(user)
 
     async def delete_user(self, user_id: int) -> None:
-        return await self.user_repository.delete_user(user_id) 
+        return await self.user_repository.delete_user(user_id)
+
+    async def update_user(self, user_id: int, user: UserUpdate) -> UserRead:
+        return await self.user_repository.update_user(user_id, user) 

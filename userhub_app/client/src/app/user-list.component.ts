@@ -1,11 +1,12 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ApiService, User } from './api.service';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   template: `
     <div *ngIf="loading" class="user-loader">
       <span class="loader"></span> Loading users...
@@ -63,11 +64,18 @@ import { ApiService, User } from './api.service';
         <div class="profile-avatar">
           <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="avatar" />
         </div>
-        <div class="profile-info">
-          <div class="profile-name">{{ selectedUser.name }}</div>
-          <div class="profile-email">{{ selectedUser.email }}</div>
+        <form class="profile-info" (ngSubmit)="updateUser()">
+          <div class="form-group">
+            <input [(ngModel)]="editName" name="editName" class="neu-input modal-input" placeholder="Name" required />
+          </div>
+          <div class="form-group">
+            <input [(ngModel)]="editEmail" name="editEmail" class="neu-input modal-input" placeholder="Email" required type="email" />
+          </div>
+        </form>
+        <div class="modal-bottom-btns">
+          <button class="neu-btn delete-btn" (click)="deleteUser(selectedUser.id, $event)">Delete</button>
+          <button class="neu-btn update-btn" (click)="updateUser()">Update</button>
         </div>
-        <button class="neu-btn delete-btn" (click)="deleteUser(selectedUser.id, $event)">Delete</button>
       </div>
     </div>
   `,
@@ -79,6 +87,8 @@ export class UserListComponent implements OnInit {
   loading = true;
   selectedUser: User | null = null;
   deleting = false;
+  editName = '';
+  editEmail = '';
 
   constructor(private api: ApiService) {}
 
@@ -101,6 +111,8 @@ export class UserListComponent implements OnInit {
 
   showDetails(user: User) {
     this.selectedUser = user;
+    this.editName = user.name;
+    this.editEmail = user.email;
   }
 
   closeDetails() {
@@ -118,6 +130,19 @@ export class UserListComponent implements OnInit {
       },
       error: () => {
         this.deleting = false;
+        // চাইলে error toast দেখাতে পারেন
+      }
+    });
+  }
+
+  updateUser() {
+    if (!this.selectedUser) return;
+    this.api.updateUser(this.selectedUser.id, { name: this.editName, email: this.editEmail }).subscribe({
+      next: () => {
+        this.closeDetails();
+        this.reload();
+      },
+      error: () => {
         // চাইলে error toast দেখাতে পারেন
       }
     });

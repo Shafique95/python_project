@@ -32,4 +32,8 @@ export class ApiService {
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  updateUser(id: number, data: Partial<User>): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/${id}`, data);
+  }
 } 
