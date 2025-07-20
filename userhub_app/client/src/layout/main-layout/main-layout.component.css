@@ -1,8 +1,8 @@
 .main-layout {
   display: flex;
   height: calc(100vh - 60px);
-  background: #f0f2f5;
-  overflow: hidden;
+  background: #f0f2f5 !important;
+  overflow: hidden !important;
 }
 
 .sidebar-container, .right-sidebar-container {
@@ -17,10 +17,16 @@
   background: var(--neu-bg, #f4f4f4);
 }
 
+.sidebar {
+  background: transparent !important;
+}
+
 .right-sidebar-container {
-  width: 320px;
-  border-left: 1px solid #e0e0e0;
+  width: 280px;
+  border-left: 1px solid #e4e6eb;
   background: var(--neu-bg, #f8f9fa);
+  overflow-y: visible !important;
+  padding: 0;
 }
 
 .main-content {
@@ -80,4 +86,16 @@ body {
 .right-sidebar-container:hover::-webkit-scrollbar-thumb {
   background: #b48cff;
   border-radius: 8px;
+} 
+
+.sidebar-container,
+.sidebar {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  --neu-bg: transparent !important;
 } 

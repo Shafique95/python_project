@@ -1,116 +1,134 @@
 .right-sidebar {
-  background: #fff;
-  border-left: 1px solid #e0e0e0;
-  box-shadow: -2px 0 8px rgba(0,0,0,0.04);
-  border-radius: 12px;
-  width: 320px;
-  padding: 1.5rem 1rem 1rem 1rem;
+  background: #f0f2f5;
+  width: 280px;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  color: #050505;
   min-height: 100vh;
-  position: sticky;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  font-size: 1rem;
+  border-left: 1px solid #e4e6eb;
+  box-sizing: border-box;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
   overflow-y: auto;
-  scrollbar-width: none;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;
 }
 .right-sidebar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
+  width: 0 !important;
+  display: none !important;
 }
-.section-title {
-  font-size: 1.08rem;
+.section {
+  padding: 18px 16px 0 16px;
+}
+.section-header {
+  font-size: 15px;
   color: #65676b;
   font-weight: 600;
+  margin-bottom: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.7rem;
-  margin-top: 0.2rem;
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
 }
-.friend-requests, .birthdays, .contacts {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  padding: 1rem 0.7rem 1rem 0.7rem;
-  margin-bottom: 1.2rem;
-  border-bottom: 1px solid #e0e0e0;
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 16px 0;
 }
-.friend-requests img, .contacts img {
+.friend-request-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.friend-request-card .avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  margin-right: 0.7rem;
-  border: 2px solid #e4e6eb;
 }
-.friend-requests .btn {
-  margin-right: 0.5rem;
-  padding: 0.3rem 1.2rem;
-  border: none;
+.friend-request-info {
+  flex: 1;
+}
+.friend-request-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.friend-request-meta {
+  color: #65676b;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+.friend-request-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+.friend-request-actions button {
+  font-weight: 600;
   border-radius: 6px;
-  font-size: 1rem;
+  border: none;
+  padding: 4px 16px;
+  font-size: 15px;
   cursor: pointer;
 }
-.friend-requests .btn.confirm {
+.friend-request-actions .confirm {
   background: #1877f2;
   color: #fff;
 }
-.friend-requests .btn.delete {
-  background: #eee;
-  color: #333;
+.friend-request-actions .delete {
+  background: #e4e6eb;
+  color: #050505;
 }
-.birthdays .icon {
-  margin-right: 0.5rem;
-}
-.birthday {
-  color: #333;
-  font-size: 0.98rem;
-  margin-top: 0.3rem;
-}
-.contacts {
-  flex: 1;
+.birthday-row {
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  border-radius: 10px;
-  background: #fff;
-  padding: 1rem 0.7rem 1rem 0.7rem;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  margin-bottom: 10px;
 }
-.contacts ul {
+.contacts-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.contacts li {
+.contacts-list li {
   display: flex;
   align-items: center;
-  margin-bottom: 0.8rem;
-  position: relative;
-  padding: 0.3rem 0.5rem;
+  gap: 10px;
+  padding: 7px 0;
   border-radius: 8px;
-  transition: background 0.2s;
+  transition: background 0.18s;
+  cursor: pointer;
 }
-.contacts li:hover {
+.contacts-list li:hover {
   background: #e4e6eb;
 }
-.contacts span {
-  font-size: 1rem;
-  color: #333;
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
 }
-.contacts .badge {
-  font-size: 1.2rem;
-  margin-left: 0.5rem;
+.name {
+  font-size: 15px;
+  font-weight: 500;
 }
-.contacts .badge.green { color: #31a24c; }
-.contacts .badge.blue { color: #1877f2; }
-.search .icon-svg {
-  display: flex;
-  align-items: center;
-  margin-left: 0.5rem;
+.online-dot {
+  width: 8px;
+  height: 8px;
+  background: #31a24c;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 8px;
+  border: 2px solid #fff;
+  position: relative;
+  top: 2px;
 }
-@media (max-width: 1200px) {
-  .right-sidebar { display: none; }
+.no-contacts-msg {
+  color: #65676b;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 15px;
 } 

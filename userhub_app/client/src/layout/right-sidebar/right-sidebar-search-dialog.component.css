@@ -1,0 +1,75 @@
+.search-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  z-index: 999;
+}
+.search-dialog {
+  position: fixed;
+  top: 120px; /* আরও বেশি মার্জিন টপে */
+  right: 120px;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  z-index: 1000;
+  padding: 0 0 12px 0;
+}
+.search-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px 8px 18px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.search-dialog-input {
+  width: 90%;
+  margin: 0 5% 10px 5%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+.search-dialog-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 18px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.search-dialog-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.search-dialog-list li:hover {
+  background: #f0f2f5;
+}
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.no-contacts-msg {
+  color: #65676b;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 15px;
+} 

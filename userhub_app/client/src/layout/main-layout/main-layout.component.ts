@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { FooterComponent } from '../footer/footer.component';
-import { RightSidebarComponent } from '../right-sidebar/right-sidebar.component';
 import { RouterOutlet } from '@angular/router';
+import { RightSidebarComponent } from '../right-sidebar/right-sidebar.component';
 import './main-layout.component.css';
 
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [HeaderComponent, SidebarComponent, FooterComponent, RightSidebarComponent, RouterOutlet],
+  imports: [HeaderComponent, SidebarComponent, FooterComponent, RouterOutlet, RightSidebarComponent],
   template: `
     <app-header [darkMode]="darkMode" (toggleDark)="toggleDark()"></app-header>
     <div class="main-layout">

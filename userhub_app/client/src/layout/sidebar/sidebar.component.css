@@ -1,89 +1,118 @@
 .sidebar {
-  background: #fff;
-  box-shadow: 1px 0 8px rgba(0,0,0,0.04);
-  border-radius: 12px;
-  width: 320px;
-  padding: 2rem 1rem 1rem 1rem;
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow-y: auto;
-  scrollbar-width: none;
+  background: #f0f2f5;
+  width: 280px;
+  padding: 0; /* একদম কোনো প্যাডিং থাকবে না */
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 15px;
+  color: #050505;
+  min-height: 100vh;
+  border-right: 1px solid #e4e6eb;
+  box-sizing: border-box;
+  position: fixed;         /* স্ক্রল করলে sidebar থাকবে */
+  top: 70px;               /* হেডার-এর নিচে ৭০px থেকে শুরু হবে */
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto; /* স্ক্রল যুক্ত করা হলো */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
+
 .sidebar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
+  display: none; /* Chrome, Safari, Opera */
 }
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  padding: 0 16px 8px 16px; /* উপরের প্যাডিং 0 */
+  margin-bottom: 2px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .nav-main, .nav-shortcuts {
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
 .nav-main li, .nav-shortcuts li {
-  margin-bottom: 1.1rem;
   display: flex;
   align-items: center;
-  font-size: 1.08rem;
-  font-weight: 500;
-  color: #050505;
-  cursor: pointer;
+  gap: 12px;
+  padding: 8px 16px;
   border-radius: 8px;
-  transition: background 0.2s;
-  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  transition: background 0.18s;
 }
-.nav-main li a, .nav-shortcuts li {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  text-decoration: none;
-  color: inherit;
-}
-.icon-svg {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-  min-width: 28px;
-  min-height: 28px;
-}
-.icon-svg svg {
-  width: 28px;
-  height: 28px;
-  display: block;
-}
+
 .nav-main li:hover, .nav-shortcuts li:hover {
   background: #e4e6eb;
 }
-.shortcut-title {
-  font-size: 0.98rem;
-  color: #65676b;
-  margin: 1.2rem 0 0.5rem 0.5rem;
+
+.nav-main li.active {
   font-weight: 600;
-  border-top: 1px solid #e0e0e0;
-  padding-top: 1rem;
+  color: #1877f2;
 }
+
+.icon-svg {
+  width: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.see-more {
+  color: #050505;
+}
+
+.shortcut-title {
+  font-size: 13px;
+  color: #65676b;
+  margin: 1.2rem 0 0.5rem 1.2rem;
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 1.2rem 0 0.5rem 0;
+}
+
 .sidebar-footer {
-  font-size: 0.93rem;
+  font-size: 13px;
   color: #65676b;
   margin-top: 2rem;
   padding-top: 1rem;
   border-top: 1px solid #e0e0e0;
   text-align: left;
 }
+
 .sidebar-footer a, .sidebar-footer span {
   color: #65676b;
   text-decoration: none;
   margin-right: 0.3rem;
-  font-size: 0.93rem;
+  font-size: 13px;
   cursor: pointer;
 }
-hr {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 1.2rem 0;
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+  background: #f0f2f5;
 }
-@media (max-width: 900px) {
-  .sidebar { flex-direction: row; padding: 1rem 0.5rem; width: 100%; }
-  .nav-main, .nav-shortcuts { flex-direction: row; overflow-x: auto; }
-  .sidebar-footer { display: none; }
+.sidebar::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 8px;
 }

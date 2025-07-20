@@ -1,4 +1,10 @@
-body { background: #f8f9fa; }
+html, body {
+  background: #f0f2f5 !important;
+}
+
+.fb-main-layout, .fb-app-grid {
+  background: #f0f2f5 !important;
+}
 
 .app-main-container {
   max-width: 480px;
@@ -145,4 +151,20 @@ body.dark .footer {
   .app-card {
     padding: 1rem 0.5rem;
   }
+}
+
+/* Sidebar/right sidebar-এর সব card/section/div/ul/li থেকে bg, shadow, border-radius, border সরানো */
+.fb-left-sidebar,
+.fb-right-sidebar,
+.fb-left-sidebar *:not(img),
+.fb-right-sidebar *:not(img),
+.fb-right-sidebar .fb-request,
+.fb-right-sidebar .fb-birthday,
+.fb-right-sidebar .fb-section,
+.fb-right-sidebar .fb-card,
+.fb-right-sidebar .fb-section-title {
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  border: none !important;
 }
