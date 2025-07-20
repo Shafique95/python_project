@@ -1,16 +1,16 @@
 .main-layout {
   display: flex;
-  height: calc(100vh - 60px); /* header/footer height adjust করুন */
+  height: calc(100vh - 60px);
   background: #f0f2f5;
   overflow: hidden;
 }
 
 .sidebar-container, .right-sidebar-container {
-  width: 260px;
+  width: 320px;
   flex-shrink: 0;
   height: 100%;
   position: sticky;
-  top: 60px; /* header height */
+  top: 60px;
   align-self: flex-start;
   overflow-y: auto;
   max-height: calc(100vh - 60px);
@@ -24,18 +24,23 @@
 }
 
 .main-content {
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  border-radius: 16px;
+  margin: 2.5rem auto 0 auto;
+  padding: 2.5rem 2rem;
+  max-width: 700px;
   flex: 1;
   overflow-y: auto;
   height: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 2rem 1.5rem;
-  scrollbar-width: none; /* Firefox: hide scrollbar */
+  scrollbar-width: none;
 }
 .main-content::-webkit-scrollbar {
   width: 0;
   background: transparent;
+}
+body {
+  background: #f0f2f5;
 }
 
 @media (max-width: 1200px) {
@@ -48,13 +53,13 @@
     max-height: none;
     position: static;
   }
-  .main-content { max-width: 100%; }
+  .main-content { max-width: 100%; margin: 1rem 0; border-radius: 0; box-shadow: none; padding: 1rem; }
 } 
 
 .sidebar-container,
 .right-sidebar-container {
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox: hide by default */
+  scrollbar-width: none;
 }
 .sidebar-container:hover,
 .right-sidebar-container:hover {

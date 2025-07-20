@@ -1,7 +1,9 @@
 .right-sidebar {
-  width: 320px;
-  background: #f8f9fa;
+  background: #fff;
   border-left: 1px solid #e0e0e0;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.04);
+  border-radius: 12px;
+  width: 320px;
   padding: 1.5rem 1rem 1rem 1rem;
   min-height: 100vh;
   position: sticky;
@@ -10,6 +12,12 @@
   flex-direction: column;
   gap: 2rem;
   font-size: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.right-sidebar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 .section-title {
   font-size: 1.08rem;
@@ -20,44 +28,30 @@
   justify-content: space-between;
   margin-bottom: 0.7rem;
   margin-top: 0.2rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
-.see-all {
-  color: #1877f2;
-  font-size: 0.98rem;
-  text-decoration: none;
-  cursor: pointer;
-  margin-left: 0.5rem;
-}
-.friend-requests {
+.friend-requests, .birthdays, .contacts {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 1rem 0.7rem 1rem 0.7rem;
   margin-bottom: 1.2rem;
   border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 1.2rem;
 }
-.friend-requests .request {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.friend-requests img {
+.friend-requests img, .contacts img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 0.7rem;
   border: 2px solid #e4e6eb;
 }
-.friend-requests .name {
-  font-weight: 500;
-  margin-bottom: 0.3rem;
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-}
 .friend-requests .btn {
   margin-right: 0.5rem;
-  padding: 0.2rem 0.7rem;
+  padding: 0.3rem 1.2rem;
   border: none;
-  border-radius: 4px;
-  font-size: 0.95rem;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
 }
 .friend-requests .btn.confirm {
@@ -67,11 +61,6 @@
 .friend-requests .btn.delete {
   background: #eee;
   color: #333;
-}
-.birthdays {
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 1.2rem;
 }
 .birthdays .icon {
   margin-right: 0.5rem;
@@ -85,6 +74,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1rem 0.7rem 1rem 0.7rem;
 }
 .contacts ul {
   list-style: none;
@@ -96,54 +89,27 @@
   align-items: center;
   margin-bottom: 0.8rem;
   position: relative;
-  padding: 0.2rem 0;
-  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  border-radius: 8px;
   transition: background 0.2s;
 }
 .contacts li:hover {
   background: #e4e6eb;
-}
-.contacts img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  margin-right: 0.7rem;
-  border: 2px solid #e4e6eb;
 }
 .contacts span {
   font-size: 1rem;
   color: #333;
 }
 .contacts .badge {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-left: 0.5rem;
 }
 .contacts .badge.green { color: #31a24c; }
 .contacts .badge.blue { color: #1877f2; }
-.search .material-icons {
-  font-size: 1.2rem;
-  color: #65676b;
-  cursor: pointer;
-}
-.right-sidebar {
-  overflow-y: auto;
-  scrollbar-width: none;
-}
-.right-sidebar:hover {
-  scrollbar-width: thin;
-  scrollbar-color: #b48cff #f0f2f5;
-}
-.right-sidebar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
-.right-sidebar:hover::-webkit-scrollbar {
-  width: 8px;
-  background: #f0f2f5;
-}
-.right-sidebar:hover::-webkit-scrollbar-thumb {
-  background: #b48cff;
-  border-radius: 8px;
+.search .icon-svg {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
 }
 @media (max-width: 1200px) {
   .right-sidebar { display: none; }
