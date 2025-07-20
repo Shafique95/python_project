@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, UserCreate } from './api.service';
+import { ApiService, UserCreate } from '../../services/api.service';
+import './user-create-form.component.css';
 
 @Component({
   selector: 'app-user-create-form',
@@ -32,7 +33,7 @@ import { ApiService, UserCreate } from './api.service';
       <div *ngIf="msg" class="toast" [ngClass]="{'success': msgType==='success', 'error': msgType==='error'}">{{msg}}</div>
     </form>
   `,
-  styleUrl: './user-create-form.component.css'
+  styleUrls: ['./user-create-form.component.css']
 })
 export class UserCreateFormComponent {
   @Output() userCreated = new EventEmitter<void>();
@@ -74,7 +75,7 @@ export class UserCreateFormComponent {
         this.userCreated.emit();
         setTimeout(() => this.msg = null, 2000);
       },
-      error: err => {
+      error: (err: any) => {
         this.msg = err.error?.detail || 'Error creating user';
         this.msgType = 'error';
         this.loading = false;

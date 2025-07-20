@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UserListComponent } from './user-list.component';
-import { UserCreateFormComponent } from './user-create-form.component';
+import { UserListComponent } from '../components/user-list/user-list.component';
+import { UserCreateFormComponent } from '../components/user-create-form/user-create-form.component';
 
 @Component({
   selector: 'app-root',
@@ -27,7 +27,7 @@ import { UserCreateFormComponent } from './user-create-form.component';
       <footer class="footer">Made with ❤️ by Atik Vai</footer>
     </div>
   `,
-  styleUrls: ['./app.css']
+  styleUrls: ['app.css']
 })
 export class AppComponent {
   @ViewChild('userList') userListComp?: UserListComponent;

@@ -1,7 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ApiService, User } from './api.service';
+import { ApiService, User } from '../../services/api.service';
+import './user-list.component.css';
 
 @Component({
   selector: 'app-user-list',
@@ -79,7 +80,7 @@ import { ApiService, User } from './api.service';
       </div>
     </div>
   `,
-  styleUrl: './user-list.component.css'
+  styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
   @Output() confetti = new EventEmitter<void>();
@@ -99,11 +100,11 @@ export class UserListComponent implements OnInit {
   reload() {
     this.loading = true;
     this.api.getUsers().subscribe({
-      next: users => {
+      next: (users: User[]) => {
         this.users = users;
         this.loading = false;
       },
-      error: err => {
+      error: (err: any) => {
         this.loading = false;
       }
     });
@@ -128,7 +129,7 @@ export class UserListComponent implements OnInit {
         this.closeDetails();
         this.reload();
       },
-      error: () => {
+      error: (err: any) => {
         this.deleting = false;
         // চাইলে error toast দেখাতে পারেন
       }
@@ -142,7 +143,7 @@ export class UserListComponent implements OnInit {
         this.closeDetails();
         this.reload();
       },
-      error: () => {
+      error: (err: any) => {
         // চাইলে error toast দেখাতে পারেন
       }
     });
