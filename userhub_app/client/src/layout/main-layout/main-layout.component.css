@@ -8,13 +8,6 @@
 .sidebar-container, .right-sidebar-container {
   width: 320px;
   flex-shrink: 0;
-  height: 100%;
-  position: sticky;
-  top: 60px;
-  align-self: flex-start;
-  overflow-y: auto;
-  max-height: calc(100vh - 60px);
-  background: var(--neu-bg, #f4f4f4);
 }
 
 .sidebar {
@@ -25,8 +18,8 @@
   width: 280px;
   border-left: 1px solid #e4e6eb;
   background: var(--neu-bg, #f8f9fa);
-  overflow-y: visible !important;
   padding: 0;
+  z-index: 100;
 }
 
 .main-content {

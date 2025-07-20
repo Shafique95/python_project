@@ -9,20 +9,25 @@
   border-left: 1px solid #e4e6eb;
   box-sizing: border-box;
   position: fixed;
-  top: 70px;
+  top: 50px;
   right: 0;
   bottom: 0;
   z-index: 100;
   overflow-y: auto;
   scrollbar-width: none !important;
   -ms-overflow-style: none;
+  margin-top: 0 !important;
 }
 .right-sidebar::-webkit-scrollbar {
   width: 0 !important;
   display: none !important;
 }
 .section {
-  padding: 18px 16px 0 16px;
+  padding: 16px 18px 0 18px;
+  margin: 0;
+}
+.section:first-child {
+  margin-top: 50px;
 }
 .section-header {
   font-size: 15px;
@@ -32,6 +37,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 0 8px 0;
+  margin: 0;
 }
 hr {
   border: none;
@@ -98,7 +105,7 @@ hr {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 7px 0;
+  padding: 10px 0;
   border-radius: 8px;
   transition: background 0.18s;
   cursor: pointer;
@@ -131,4 +138,56 @@ hr {
   text-align: center;
   margin: 20px 0;
   font-size: 15px;
+}
+/* নিচের ওভাররাইডিং ব্লকটি মুছে ফেলুন */
+/*
+.right-sidebar,
+.right-sidebar *,
+.section,
+.section-header,
+.contacts-list,
+.contacts-list li,
+.friend-request-card,
+.birthday-row,
+.no-contacts-msg {
+  padding: 0 !important;
+  padding-top: 0 !important;
+  margin: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+*/
+
+/* সুন্দর ও ব্যালান্সড padding/margin */
+.section {
+  padding: 16px 18px 0 18px;
+  margin: 0;
+}
+.section-header {
+  padding: 0 0 8px 0;
+  margin: 0;
+}
+.contacts-list li,
+.friend-request-card,
+.birthday-row {
+  padding: 10px 0;
+  margin: 0;
+}
+.section,
+.section-header,
+.contacts-list,
+.contacts-list li,
+.friend-request-card,
+.birthday-row,
+.no-contacts-msg {
+  margin: 1px !important;
+  padding: 1px !important;
+} 
+.right-sidebar {
+  margin-top: 30px !important;
+} 
+.contacts-list li {
+  padding: 8px 4px !important;
 } 

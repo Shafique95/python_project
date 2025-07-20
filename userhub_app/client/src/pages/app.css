@@ -2,10 +2,6 @@ html, body {
   background: #f0f2f5 !important;
 }
 
-.fb-main-layout, .fb-app-grid {
-  background: #f0f2f5 !important;
-}
-
 .app-main-container {
   max-width: 480px;
   margin: 56px auto 0 auto;
