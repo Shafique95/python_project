@@ -1,17 +1,37 @@
 .right-sidebar {
   width: 320px;
-  background: var(--neu-bg, #f8f9fa);
+  background: #f8f9fa;
   border-left: 1px solid #e0e0e0;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
   min-height: 100vh;
   position: sticky;
   top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1rem;
 }
-.right-sidebar h4 {
-  margin-top: 0;
-  font-size: 1.1rem;
-  color: #555;
+.section-title {
+  font-size: 1.08rem;
+  color: #65676b;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 0.7rem;
+  margin-top: 0.2rem;
+}
+.see-all {
+  color: #1877f2;
+  font-size: 0.98rem;
+  text-decoration: none;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+.friend-requests {
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1.2rem;
 }
 .friend-requests .request {
   display: flex;
@@ -23,10 +43,14 @@
   height: 40px;
   border-radius: 50%;
   margin-right: 0.7rem;
+  border: 2px solid #e4e6eb;
 }
 .friend-requests .name {
   font-weight: 500;
   margin-bottom: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 .friend-requests .btn {
   margin-right: 0.5rem;
@@ -46,9 +70,21 @@
 }
 .birthdays {
   margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1.2rem;
 }
 .birthdays .icon {
   margin-right: 0.5rem;
+}
+.birthday {
+  color: #333;
+  font-size: 0.98rem;
+  margin-top: 0.3rem;
+}
+.contacts {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .contacts ul {
   list-style: none;
@@ -59,19 +95,56 @@
   display: flex;
   align-items: center;
   margin-bottom: 0.8rem;
+  position: relative;
+  padding: 0.2rem 0;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.contacts li:hover {
+  background: #e4e6eb;
 }
 .contacts img {
   width: 32px;
   height: 32px;
   border-radius: 50%;
   margin-right: 0.7rem;
+  border: 2px solid #e4e6eb;
 }
 .contacts span {
   font-size: 1rem;
   color: #333;
 }
+.contacts .badge {
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+}
+.contacts .badge.green { color: #31a24c; }
+.contacts .badge.blue { color: #1877f2; }
+.search .material-icons {
+  font-size: 1.2rem;
+  color: #65676b;
+  cursor: pointer;
+}
+.right-sidebar {
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.right-sidebar:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #b48cff #f0f2f5;
+}
+.right-sidebar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.right-sidebar:hover::-webkit-scrollbar {
+  width: 8px;
+  background: #f0f2f5;
+}
+.right-sidebar:hover::-webkit-scrollbar-thumb {
+  background: #b48cff;
+  border-radius: 8px;
+}
 @media (max-width: 1200px) {
-  .right-sidebar {
-    display: none;
-  }
+  .right-sidebar { display: none; }
 } 

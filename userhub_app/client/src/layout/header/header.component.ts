@@ -25,7 +25,7 @@ import './header.component.css';
       <div class="fb-header-right">
         <a><span class="material-icons">apps</span></a>
         <a><span class="material-icons">messenger</span></a>
-        <a class="notif"><span class="material-icons">notifications</span><span class="badge">7</span></a>
+        <a class="notif"><span class="material-icons">notifications</span><span class="badge">4</span></a>
         <a class="avatar"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" /></a>
       </div>
     </header>
@@ -36,7 +36,6 @@ export class HeaderComponent implements OnInit {
   @Input() darkMode = false;
   @Output() toggleDark = new EventEmitter<void>();
   ngOnInit() {
-    // Material icons ফন্ট লোড (একবারই)
     if (!document.getElementById('material-icons-font')) {
       const link = document.createElement('link');
       link.id = 'material-icons-font';
