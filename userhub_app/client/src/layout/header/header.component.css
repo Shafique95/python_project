@@ -1,0 +1,119 @@
+.fb-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.fb-header-left {
+  display: flex;
+  align-items: center;
+}
+.fb-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem;
+}
+.fb-search-box {
+  display: flex;
+  align-items: center;
+  background: #f0f2f5;
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  height: 40px;
+}
+.fb-search-box .material-icons {
+  color: #65676b;
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+.fb-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 1rem;
+  width: 160px;
+}
+.fb-header-center {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.fb-header-center a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 48px;
+  border-radius: 8px;
+  color: #65676b;
+  font-size: 2rem;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+}
+.fb-header-center a.active, .fb-header-center a:hover {
+  color: #1877f2;
+  background: #f0f2f5;
+}
+.fb-header-center a.active {
+  border-bottom: 3px solid #1877f2;
+}
+.fb-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.fb-header-right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: #f0f2f5;
+  color: #050505;
+  font-size: 1.5rem;
+  position: relative;
+  transition: background 0.2s;
+}
+.fb-header-right a:hover {
+  background: #e4e6eb;
+}
+.fb-header-right .notif {
+  position: relative;
+}
+.fb-header-right .badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: #f02849;
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  padding: 0 6px;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+.fb-header-right .avatar img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+@media (max-width: 900px) {
+  .fb-header-center { display: none; }
+  .fb-search-box input { width: 80px; }
+}
+@media (max-width: 600px) {
+  .fb-header { flex-direction: column; height: auto; padding: 0.5rem; }
+  .fb-header-left { margin-bottom: 0.5rem; }
+}

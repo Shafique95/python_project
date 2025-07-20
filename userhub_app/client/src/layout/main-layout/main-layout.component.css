@@ -1,0 +1,78 @@
+.main-layout {
+  display: flex;
+  height: calc(100vh - 60px); /* header/footer height adjust করুন */
+  background: #f0f2f5;
+  overflow: hidden;
+}
+
+.sidebar-container, .right-sidebar-container {
+  width: 260px;
+  flex-shrink: 0;
+  height: 100%;
+  position: sticky;
+  top: 60px; /* header height */
+  align-self: flex-start;
+  overflow-y: auto;
+  max-height: calc(100vh - 60px);
+  background: var(--neu-bg, #f4f4f4);
+}
+
+.right-sidebar-container {
+  width: 320px;
+  border-left: 1px solid #e0e0e0;
+  background: var(--neu-bg, #f8f9fa);
+}
+
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem 1.5rem;
+  scrollbar-width: none; /* Firefox: hide scrollbar */
+}
+.main-content::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+@media (max-width: 1200px) {
+  .right-sidebar-container { display: none; }
+}
+@media (max-width: 900px) {
+  .main-layout { flex-direction: column; }
+  .sidebar-container, .right-sidebar-container {
+    width: 100%;
+    max-height: none;
+    position: static;
+  }
+  .main-content { max-width: 100%; }
+} 
+
+.sidebar-container,
+.right-sidebar-container {
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox: hide by default */
+}
+.sidebar-container:hover,
+.right-sidebar-container:hover {
+  scrollbar-width: thin;
+  scrollbar-color: #b48cff #f0f2f5;
+}
+.sidebar-container::-webkit-scrollbar,
+.right-sidebar-container::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.sidebar-container:hover::-webkit-scrollbar,
+.right-sidebar-container:hover::-webkit-scrollbar {
+  width: 8px;
+  background: #f0f2f5;
+}
+.sidebar-container:hover::-webkit-scrollbar-thumb,
+.right-sidebar-container:hover::-webkit-scrollbar-thumb {
+  background: #b48cff;
+  border-radius: 8px;
+} 
