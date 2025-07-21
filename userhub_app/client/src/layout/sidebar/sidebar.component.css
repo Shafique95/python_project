@@ -5,29 +5,47 @@
   font-family: 'Segoe UI', Arial, sans-serif;
   font-size: 15px;
   color: #050505;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  height: calc(100vh - 56px);
   border-right: 1px solid #e4e6eb;
   box-sizing: border-box;
-  position: fixed;         /* স্ক্রল করলে sidebar থাকবে */
-  top: 70px;               /* হেডার-এর নিচে ৭০px থেকে শুরু হবে */
+  position: fixed;
+  top: 56px;
   left: 0;
-  bottom: 0;
-  z-index: 100;
-  overflow-y: auto; /* স্ক্রল যুক্ত করা হলো */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  /* margin-top: 70px; <-- এই লাইন মুছে দিন */
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+.sidebar:hover {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #b48cff #f0f2f5;
 }
 
+/* .sidebar::-webkit-scrollbar {
+  display: none;  Chrome, Safari, Opera - hide scrollbar (এটি সরালাম)
+} */
+
+/* নিচের scrollbar স্টাইল চাইলে রাখতে পারেন, না চাইলে সরিয়ে দিন */
 .sidebar::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  width: 0;
+  background: transparent;
+}
+.sidebar:hover::-webkit-scrollbar {
+  width: 8px;
+  background: #f0f2f5;
+}
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background: #b48cff;
+  border-radius: 8px;
 }
 
 .right-sidebar-container {
   position: fixed;
-  top: 50px;
+  top: 70px;
   right: 0;
   width: 280px;
-  height: calc(100vh - 50px);
+  height: calc(100vh - 70px);
   border-left: 1px solid #e4e6eb;
   background: var(--neu-bg, #f8f9fa);
   overflow-y: auto;
@@ -133,13 +151,4 @@ hr {
   margin-right: 0.3rem;
   font-size: 13px;
   cursor: pointer;
-}
-
-.sidebar::-webkit-scrollbar {
-  width: 8px;
-  background: #f0f2f5;
-}
-.sidebar::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 8px;
 }
